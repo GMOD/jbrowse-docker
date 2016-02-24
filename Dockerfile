@@ -1,7 +1,6 @@
 # JBrowse
 # VERSION 1.0
 FROM nginx
-MAINTAINER Eric Rasche <esr@tamu.edu>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update --fix-missing
@@ -13,7 +12,7 @@ RUN mkdir -p /jbrowse/ && git clone --recursive https://github.com/gmod/jbrowse 
 
 WORKDIR /jbrowse/
 RUN ./setup.sh && \
-    ./bin/cpanm --no-test --force JSON Digest::CRC32 Hash::Merge PerlIO::gzip Devel::Size \
+    ./bin/cpanm --force JSON Hash::Merge PerlIO::gzip Devel::Size \
     Heap::Simple Heap::Simple::XS List::MoreUtils Exception::Class Test::Warn Bio::Perl \
     Bio::DB::SeqFeature::Store File::Next Bio::DB::Das::Chado && \
     rm -rf /root/.cpan/
