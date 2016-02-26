@@ -1,12 +1,24 @@
 # JBrowse
 
-Configurable docker image for [GMOD's
-JBrowse](https://github.com/gmod/jbrowse/).
+Configurable docker image for [GMOD/JBrowse](https://github.com/gmod/jbrowse/).
 [http://jbrowse.org/](http://jbrowse.org/)
 
-This docker image allows customisation of loaded data; by placing
+This docker image allows customization of loaded data; by placing
 executable shell scripts in the mounted folder, you can easily load data
 on boot.
+
+## Based On: 
+https://github.com/erasche/docker-jbrowse - Eric Rasche
+
+## Quick Start:
+Run the docker image from linux shell (retrieves and installs if necessary).
+```console
+$ docker run -p 8080:80 jbrowse/jbrowse-1.12.0
+```
+After this completes, JBrowse will be accessible from a web browser:
+...
+http://<server IP address>:8080
+...
 
 ## Example:
 
@@ -21,7 +33,7 @@ $ docker-compose up
 Data can be provided to the container via a mount:
 
 ```console
-$ docker run -v `pwd`/my-data/:/data/ erasche/jbrowse
+$ docker run -v `pwd`/my-data/:/data/ jbrowse/jbrowse-1.12.0
 ```
 
 ## Startup Scripts
