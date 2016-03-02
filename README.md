@@ -15,11 +15,21 @@ Run the docker image from linux shell (retrieves and installs if necessary).
 ```console
 $ docker run -p 8080:80 jbrowse/gmod-jbrowse
 ```
-After this completes, JBrowse will be accessible from a web browser:
+After this completes, JBrowse will be accessible from a web browser.
+Find the container ip address on windows:
 ```console
-http://<server IP address>:8080
+docker-machine ip
 ```
-## running specific version (earliest version available, 1.12.0):
+Find the container ip address on linux/mac:
+```console
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)
+```
+From a web browser:
+```console
+http://<container IP address>:8080
+```
+## running specific version:
+(earliest docker image available is 1.12.0)
 Run the docker image from linux shell (retrieves and installs if necessary).
 ```console
 $ docker run -p 8080:80 jbrowse/gmod-jbrowse:1.12.0
