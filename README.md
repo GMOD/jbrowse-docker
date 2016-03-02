@@ -35,7 +35,7 @@ Run the docker image from linux shell (retrieves and installs if necessary).
 $ docker run -p 8080:80 jbrowse/gmod-jbrowse:1.12.0
 ```
 
-## Example:
+## Launching with YAML script:
 
 A `docker-compose.yml` file is provided for your convenience, allowing you to boot up the example quite quickly:
 
